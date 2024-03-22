@@ -45,13 +45,13 @@ An external controller (such as the Arduino) tells the servo where to go with a 
 
 ### Figure-03 SERVO MOTOR OVERVIEW 
 
+
+
+### FIGURE 04 CIRCUIT DIAGRAM
 #### Diagram :
 ![OP](./aa2.png)
 #### Schematic Diagram :
 ![OP](./aa1.png)
-
-### FIGURE 04 CIRCUIT DIAGRAM
-
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
 2.	Connect the board to your computer via the USB cable.
