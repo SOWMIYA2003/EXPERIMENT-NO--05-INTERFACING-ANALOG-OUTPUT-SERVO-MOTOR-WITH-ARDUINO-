@@ -1,8 +1,8 @@
-###  DATE: 
+###  DATE: 22.03.2024
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME: Sowmiya N
+###  ROLL NO : 212221230106
+###  DEPARTMENT: Artificial Intelligence and data science
 
 
 # EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
@@ -45,19 +45,10 @@ An external controller (such as the Arduino) tells the servo where to go with a 
 
 ### Figure-03 SERVO MOTOR OVERVIEW 
 
- 
-
-
- 
-
-
-
-
-
-CIRCUIT DIAGRAM
- 
- 
- ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
+#### Diagram :
+![OP](./aa2.png)
+#### Schematic Diagram :
+![OP](./aa1.png)
 
 ### FIGURE 04 CIRCUIT DIAGRAM
 
@@ -75,14 +66,66 @@ CIRCUIT DIAGRAM
 
 ### PROGRAM :
  
+```
+// C++ code
+//
+#include<Servo.h>
+Servo sr1;
+int pos=0;
+int red=9;
+int green=8;
+
+void setup()
+{
+  sr1.attach(6);
+  Serial.begin(9600);
+  pinMode(red,OUTPUT);
+  pinMode(green,OUTPUT);
+}
+
+void loop()
+{
+  for (pos=0;pos<=180;pos+=5)
+  {
+    sr1.write(pos);
+      delay(1000);
+    Serial.println(pos);
+    
+   if (pos>=120)
+  {
+    digitalWrite(red,HIGH);
+    delay(200);
+    digitalWrite(red,LOW);
+    delay(200);
+  }
+  }
+    for (pos=180;pos>=0;pos-=5)
+    {
+      sr1.write(pos);
+            delay(1000);
+      Serial.println(pos);
+      
+     if (pos<=100)
+  	{
+    digitalWrite(green,HIGH);
+    delay(200);
+    digitalWrite(green,LOW);
+    delay(200);
+    
+  	}
+    }
+
+}
+```
 
 
-
-
-
-
-
-
+### OUTPUT :
+#### Indicating value greater than 120 - Red :
+![op](./aa3.png)
+### Indicating value lesser than 100 - Green : 
+![op](./aa4.png)
+#### Serial Monitor -  Values & Graph : 
+![op](./aa5.png)
 
 ### RESULTS: 
 Arduino uno interfacing with servo motor is learned and angular position is controlled using PWM signal.
